@@ -1,0 +1,33 @@
+<div class="well" ng-show="showMe()"> 
+  <div class="row"> 
+      <h4>{{message}}</h4>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Email address</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+      </div>
+      <div class="input-group">
+        <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="dt" is-open="opened" min-date="minDate" max-date="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+        <span class="input-group-btn">
+          <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+        </span>
+      </div>
+      <div class='form-group col-xs-3'>
+        <label class="control-label unbreakable" for="code">Code</label>
+        <input type="text" id="code" class='col-xs-11 form-control' 
+               value="" ng-model="selected.code"
+               typeahead="state.code for state in states | filter:{code:$viewValue}"
+              typeahead-on-select="onSelectState($item)">
+      </div>
+      <div class="form-group col-xs-9">
+          <label for="state">State</label>
+          <input type="text" id="state" class="form-control" 
+          value="" ng-model="selected.name" 
+          typeahead="state.name for state in states | filter:{name:$viewValue}" 
+          typeahead-on-select="onSelectState($item)">
+      </div>
+  </div>
+</div>
