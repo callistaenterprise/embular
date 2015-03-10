@@ -1,6 +1,15 @@
 Embular
 ==========
 
+##Install
+Once cloned go into the embular directory and type the following
+- npm install
+- bower install
+- grunt
+- go to http://localhost:5200
+
+Grunt will start a node server and run a watch task.  You should be able to add,ammend, update js and css, the changes will make their way to the browser with a refresh.  No livereload just yet but I'll add this when I get time...
+
 This is a sandbox angular application to demonstrate the use of https://github.com/angular-ui/ui-router.
 The file structure is an effort to follow Angular's best practices for seperation of controllers, routes and models.
 ##Controllers
