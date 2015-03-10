@@ -1,6 +1,6 @@
-angular.module('app.main.form')
+angular.module('embularApp.main.form')
 
-.controller('app.main.form.Form1Controller', ['$scope','$timeout', 'app.main.form.FormControllerViewState', function($scope, $timeout, formControllerViewState) {
+.controller('embularApp.main.form.Form1Controller', ['$scope','$timeout', 'embularApp.main.form.FormControllerViewState', function($scope, $timeout, formControllerViewState) {
 	// general ==================================================================
   $scope.message = 'This is the form 1 controller!';
   $scope.showMe = function(){

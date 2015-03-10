@@ -42,7 +42,7 @@ grunt.initConfig({
       },
       local_dependencies: {
         files: {
-          'public/src/index.html': ['public/src/**/*.js', 'public/src/**/*.css'],
+          'public/src/index.html': ['public/src/**/*.js','public/dist/js/templates.min.js',  'public/src/**/*.css'],
         }
       }
     },
@@ -71,6 +71,8 @@ grunt.initConfig({
   // JS TASKS ================================================================
   jshint : config('jshint'),
 
+  ngtemplates : config('ngtemplates'),
+  
   concat : config('concat'),
   
   uglify : config('uglify'),
@@ -89,6 +91,10 @@ grunt.initConfig({
     js: {
       files: ['public/src/js/**/*.js'],
       tasks: ['jshint', 'uglify', 'injector', 'wiredep']
+    },
+    html: {
+      files: ['public/src/views/**/*.html'],
+      tasks: ['ngtemplates', 'uglify']
     }
   },
 
@@ -111,10 +117,11 @@ grunt.initConfig({
 // grunt.registerTask('build', [
 //    'less', 'useminPrepare', 'concat','uglify', 'cssmin', 'rev', 'usemin'
 // ]);
+grunt.registerTask('templates', ['ngtemplates', 'uglify', 'injector']);
 
 grunt.registerTask('install', ['bower-install-simple', 'injector', 'wiredep']);
 
-grunt.registerTask('default', ['less', 'cssmin', 'jshint', 'uglify', 'injector', 'wiredep', 'concurrent']);
+grunt.registerTask('default', ['less', 'cssmin', 'jshint', 'ngtemplates', 'uglify', 'injector', 'wiredep', 'concurrent']);
 
 grunt.registerTask('prod', ['less', 'cssmin', 'jshint', 'uglify', 'concurrent']);
 
@@ -132,4 +139,6 @@ grunt.loadNpmTasks('grunt-bower-task');
 grunt.loadNpmTasks("grunt-bower-install-simple");
 grunt.loadNpmTasks('grunt-wiredep');
 grunt.loadNpmTasks('grunt-asset-injector');
+grunt.loadNpmTasks('grunt-angular-templates');
+
 };

@@ -3,6 +3,7 @@ var app     = express();
 
 app.use(express.static(__dirname + '/public/src'));
 app.use('/bower_components', express.static(__dirname + '/bower_components'));
+app.use('/public/dist', express.static(__dirname + '/public/dist'));
 
 app.get('/', function(req, res) {
 	res.sendfile('./public/src/index.html');

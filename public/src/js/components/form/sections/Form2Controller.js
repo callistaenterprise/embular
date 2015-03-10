@@ -1,6 +1,6 @@
-angular.module('app.main.form')
+angular.module('embularApp.main.form')
 
-.controller('app.main.form.Form2Controller', ['$scope', 'app.main.form.FormControllerViewState', function($scope, formControllerViewState) {
+.controller('embularApp.main.form.Form2Controller', ['$scope', 'embularApp.main.form.FormControllerViewState', function($scope, formControllerViewState) {
 	// general ==================================================================
   $scope.message = 'This is the form 2 controller!';
   

@@ -1,6 +1,6 @@
-angular.module('app.main.form')
+angular.module('embularApp.main.form')
 
-.factory('app.main.form.FormControllerViewState', [ function() {
+.factory('embularApp.main.form.FormControllerViewState', [ function() {
 	
   function FormControllerViewState(){
     this.viewState = {
